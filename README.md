@@ -12,17 +12,17 @@ The code receives in the first step a esri shapefile (**SHP**), and extracts the
 
 Based on the given coordinates, the code performs clustering using the **HDBSCAN** algorithm which returns two attributes to each point in space: **label** and **probability**. The label determines which cluster each point is associated with, and the probability defines each point belonging to its cluster. This data can be plot as a heat-map, such as in this example:
 
-![probability](https://github.com/EtzionData/generate-Convex-Hull-SHP-from-HDBSCAN-clustering-probabilities/blob/master/Picture/example%20-%20cluster%20probability%20values.png)
+![probability](https://raw.githubusercontent.com/EtzionData/generate-Convex-Hull-SHP-from-HDBSCAN-clustering-probabilities/master/Picture/example%20-%20cluster%20probability%20values.png)
 
 As can be seen in the example, the closer a point is to the cluster center, the higher its probability, and closer to the value 1. In contrast, points farther from the center approach to 0. Every cluster can have a different density, based on its distribution characteristics. As you can see, different clusters can have a completely different density (the code used to generate this plot with full documentation available here: [**multi-smooth-density-plot**](https://github.com/EtzionData/create-multi-smooth-density-plot)):
 
-![density](https://github.com/EtzionData/generate-Convex-Hull-SHP-from-HDBSCAN-clustering-probabilities/blob/master/Picture/example%20-%20smooth%20density%20of%20cluster%20probabilities.png)
+![density](https://raw.githubusercontent.com/EtzionData/generate-Convex-Hull-SHP-from-HDBSCAN-clustering-probabilities/master/Picture/example%20-%20smooth%20density%20of%20cluster%20probabilities.png)
 
 Based on these data, we can choose a threshold condition (**"prob"**) from which only we selected to analyze points from the cluster. The code create a boundary around the choosen point using the **Convex Hull** algorithm. Now we get a polygon that defines the cluster boundaries, based on the threshold conditions we have defined. This ploygon focus the cluster boundary to the core so that they include only the point fit the defined threshold.
 
 The all process can describe through using the following steps (for **prob=0.5**):
 
-![steps](https://github.com/EtzionData/generate-Convex-Hull-SHP-from-HDBSCAN-clustering-probabilities/blob/master/Picture/steps.png)
+![steps](https://raw.githubusercontent.com/EtzionData/generate-Convex-Hull-SHP-from-HDBSCAN-clustering-probabilities/master/Picture/steps.png)
 
 As you can see, the cluster density take major rule in the definition of the boundary. It can be seen that **cluster 2** is so dense that its boundary is small and very focused. In contrast, **cluster 1** has a lower density, and therefore, its boundary is much larger and wider.
 
@@ -33,7 +33,7 @@ The boundary generated will be saved as a new SHP file. When we save the data, w
 
 An example of one of the SHP file created using the code can be seen in the **Boston** area:
 
-![Boston](https://github.com/EtzionData/generate-Convex-Hull-SHP-from-HDBSCAN-clustering-probabilities/blob/master/Picture/boston_example.jpg)
+![Boston](https://raw.githubusercontent.com/EtzionData/generate-Convex-Hull-SHP-from-HDBSCAN-clustering-probabilities/master/Picture/boston_example.jpg)
 
 The code will returned the data about each of the original points as a new pandas dataframe, along with their probability and label data. In addition, the code will also return the records that composed the SHP that created, also as dataframe.
 
