@@ -1,3 +1,7 @@
+<!-- readme-visual-refresh:banner -->
+![generate-Convex-Hull-SHP-from-HDBSCAN-clustering-probabilities — hand-drawn project banner](assets/readme/banner.svg)
+<!-- /readme-visual-refresh:banner -->
+
 # Generate-Convex-Hull-SHP-from-HDBSCAN-clustering-probabilities
 Defines a boundary around cluster centers in a given point-layer shapefile.
 
@@ -91,4 +95,6 @@ When the variables displayed are:
 ## License
 MIT © [Etzion Harari](https://github.com/EtzionData)
 
-
+<!-- readme-visual-refresh:artwork-source -->
+[Editable banner artwork · Excalidraw](assets/readme/banner.excalidraw)
+<!-- /readme-visual-refresh:artwork-source -->
